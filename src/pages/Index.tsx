@@ -5,21 +5,17 @@ import VideoSection from "@/components/VideoSection";
 import BrandHighlights from "@/components/BrandHighlights";
 import DistributorCTA from "@/components/DistributorCTA";
 import Footer from "@/components/Footer";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Header />
       <main className="pt-20">
         <Hero />
-        <ProductShowcase />
+        <ProductShowcase className="rounded-none" />
         <VideoSection />
         <BrandHighlights />
         <DistributorCTA />
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
