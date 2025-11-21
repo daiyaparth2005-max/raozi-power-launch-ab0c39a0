@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroFire from "@/assets/hero-fire.jpg";
-import productSplash from "@/assets/product-splash.png";
-import productDuo from "@/assets/product-duo.png";
+import heroDuoDark from "@/assets/hero-duo-dark.png";
+import heroDuoLight from "@/assets/hero-duo-light.png";
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [{
@@ -12,11 +12,11 @@ const Hero = () => {
     title: "Energy For Leaders",
     subtitle: "Unleash Your Potential"
   }, {
-    image: productSplash,
-    title: "Power Your Performance",
-    subtitle: "High Caffeine, Zero Sugar"
+    image: heroDuoDark,
+    title: "Fuel Your Greatness",
+    subtitle: "Explore Energy"
   }, {
-    image: productDuo,
+    image: heroDuoLight,
     title: "Designed For Achievers",
     subtitle: "Premium Energy Experience"
   }];
