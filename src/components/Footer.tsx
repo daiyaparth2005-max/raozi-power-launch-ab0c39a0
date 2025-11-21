@@ -19,7 +19,7 @@ const Footer = () => {
             <div className="space-y-3">
               <a href="mailto:support@raozi.com" className="flex items-center gap-3 text-white/80 hover:text-accent transition-colors">
                 <Mail className="w-5 h-5" />
-                <span>support@raozi.com</span>
+                <span>support@raozi.in</span>
               </a>
               <a href="tel:+1234567890" className="flex items-center gap-3 text-white/80 hover:text-accent transition-colors">
                 <Phone className="w-5 h-5" />

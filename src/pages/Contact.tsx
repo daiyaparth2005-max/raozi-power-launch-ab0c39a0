@@ -7,34 +7,36 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-
 const Contact = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    message: "",
+    message: ""
   });
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
       title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you soon.",
+      description: "Thank you for contacting us. We'll get back to you soon."
     });
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: ""
+    });
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({
+    setFormData(prev => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     }));
   };
-
-  return (
-    <div className="min-h-screen">
+  return <div className="min-h-screen">
       <Header />
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-4">
@@ -56,55 +58,21 @@ const Contact = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <Label htmlFor="name">Name</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="mt-2"
-                    />
+                    <Input id="name" name="name" value={formData.name} onChange={handleChange} required className="mt-2" />
                   </div>
                   <div>
                     <Label htmlFor="email">Email</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="mt-2"
-                    />
+                    <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required className="mt-2" />
                   </div>
                   <div>
                     <Label htmlFor="phone">Phone (Optional)</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="mt-2"
-                    />
+                    <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} className="mt-2" />
                   </div>
                   <div>
                     <Label htmlFor="message">Message</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      required
-                      rows={6}
-                      className="mt-2"
-                    />
+                    <Textarea id="message" name="message" value={formData.message} onChange={handleChange} required rows={6} className="mt-2" />
                   </div>
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-accent hover:bg-accent/90 text-white font-bold"
-                  >
+                  <Button type="submit" size="lg" className="w-full bg-accent hover:bg-accent/90 text-white font-bold">
                     Send Message
                   </Button>
                 </form>
@@ -121,11 +89,8 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-bold mb-1">Email</h3>
-                        <a
-                          href="mailto:support@raozi.com"
-                          className="text-muted-foreground hover:text-accent transition-colors"
-                        >
-                          support@raozi.com
+                        <a href="mailto:support@raozi.com" className="text-muted-foreground hover:text-accent transition-colors">
+                          support@raozi.in
                         </a>
                       </div>
                     </div>
@@ -135,11 +100,8 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-bold mb-1">Phone</h3>
-                        <a
-                          href="tel:+1234567890"
-                          className="text-muted-foreground hover:text-accent transition-colors"
-                        >
-                          +1 (234) 567-890
+                        <a href="tel:+1234567890" className="text-muted-foreground hover:text-accent transition-colors">
+                          +91 78500                           
                         </a>
                       </div>
                     </div>
@@ -171,8 +133,6 @@ const Contact = () => {
         </div>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
