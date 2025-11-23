@@ -1,17 +1,19 @@
 import raozicans from "@/assets/raozi-cans.png";
+import raozipremium from "@/assets/raozi-premium.png";
+
 const EnergyDrinks = () => {
   const drinks = [{
     name: "RAOZI Classic",
     variant: "Original Energy",
     size: "250 ML",
     image: raozicans,
-    position: "object-[20%_center]"
+    position: "object-center"
   }, {
     name: "RAOZI Premium",
     variant: "Mountain Edition",
     size: "250 ML",
-    image: raozicans,
-    position: "object-[80%_center]"
+    image: raozipremium,
+    position: "object-center"
   }];
   return <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
