@@ -1,6 +1,5 @@
 import raozicans from "@/assets/raozi-cans.png";
 import raozipremium from "@/assets/raozi-premium.png";
-
 const EnergyDrinks = () => {
   const drinks = [{
     name: "RAOZI Classic",
@@ -22,19 +21,20 @@ const EnergyDrinks = () => {
         <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-gradient-to-br from-brand-cyan/30 to-transparent rounded-full blur-3xl animate-pulse-glow animation-delay-1000" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-5xl md:text-6xl font-black mb-4 bg-gradient-to-r from-foreground via-accent to-brand-fire bg-clip-text text-transparent">
+      <div className="container mx-auto relative z-10 px-[6px] py-0">
+        <div className="text-center mb-16 animate-fade-in border-8 py-0">
+          <h2 className="text-5xl md:text-6xl mb-4 bg-gradient-to-r from-foreground via-accent to-brand-fire bg-clip-text text-transparent text-center font-sans font-extrabold px-0 my-0 py-[9px]">
             Energy Drinks
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto py-0">
             Premium energy solutions crafted for excellence
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-          {drinks.map((drink, index) => <div key={index} className="group relative bg-gradient-to-br from-card via-card/95 to-card/90 rounded-3xl p-10 border-2 border-border/50 hover:border-accent/50 transition-all duration-500 hover:shadow-[0_0_50px_rgba(238,91,43,0.3)] cursor-pointer overflow-hidden animate-fade-in backdrop-blur-sm"
-              style={{ animationDelay: `${index * 200}ms` }}>
+          {drinks.map((drink, index) => <div key={index} className="group relative bg-gradient-to-br from-card via-card/95 to-card/90 rounded-3xl p-10 border-2 border-border/50 hover:border-accent/50 transition-all duration-500 hover:shadow-[0_0_50px_rgba(238,91,43,0.3)] cursor-pointer overflow-hidden animate-fade-in backdrop-blur-sm" style={{
+          animationDelay: `${index * 200}ms`
+        }}>
               {/* Gradient overlay on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-accent/0 via-brand-fire/0 to-brand-electric/0 group-hover:from-accent/10 group-hover:via-brand-fire/5 group-hover:to-brand-electric/10 transition-all duration-500 rounded-3xl pointer-events-none" />
               
