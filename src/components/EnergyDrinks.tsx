@@ -21,7 +21,7 @@ const EnergyDrinks = () => {
         <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-gradient-to-br from-brand-cyan/30 to-transparent rounded-full blur-3xl animate-pulse-glow animation-delay-1000" />
       </div>
 
-      <div className="container mx-auto relative z-10 px-[6px] py-0">
+      <div className="container mx-auto relative z-10 py-0 px-[3px]">
         <div className="text-center mb-16 animate-fade-in border-8 py-0">
           <h2 className="text-5xl md:text-6xl mb-4 bg-gradient-to-r from-foreground via-accent to-brand-fire bg-clip-text text-transparent text-center font-sans font-extrabold px-0 my-0 py-[9px]">
             Energy Drinks
