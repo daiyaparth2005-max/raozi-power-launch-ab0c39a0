@@ -22,10 +22,10 @@ const ComingSoon = () => {
               HYDRATION
             </Badge>
             <h3 className="text-3xl md:text-4xl font-black text-white mb-2">
-              MINERAL WATER
+              RAOZI CRANBERRY
             </h3>
             <p className="text-lg text-slate-400">
-              500ML / 1L
+              250ML
             </p>
           </div>
         </div>
