@@ -5,10 +5,14 @@ import raozimineralwater from "@/assets/raozi-mineral-water.jpg";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { X } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-
 const EnergyDrinks = () => {
   const [selectedDrink, setSelectedDrink] = useState<number | null>(null);
-  const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
+  const {
+    ref,
+    isVisible
+  } = useScrollAnimation({
+    threshold: 0.2
+  });
   const drinks = [{
     name: "RAOZI Classic",
     variant: "Original Energy",
@@ -46,14 +50,11 @@ const EnergyDrinks = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-10 max-w-7xl mx-auto">
-          {drinks.map((drink, index) => (
-            <Dialog key={index} open={selectedDrink === index} onOpenChange={(open) => setSelectedDrink(open ? index : null)}>
+          {drinks.map((drink, index) => <Dialog key={index} open={selectedDrink === index} onOpenChange={open => setSelectedDrink(open ? index : null)}>
               <DialogTrigger asChild>
-                <div 
-                  className="group relative bg-gradient-to-br from-card via-card/95 to-card/90 rounded-3xl p-10 border-2 border-border/50 hover:border-accent/50 transition-all duration-500 hover:shadow-[0_0_50px_rgba(238,91,43,0.3)] cursor-pointer overflow-hidden animate-fade-in backdrop-blur-sm active:scale-95" 
-                  style={{ animationDelay: `${index * 200}ms` }}
-                  onClick={() => setSelectedDrink(index)}
-                >
+                <div className="group relative bg-gradient-to-br from-card via-card/95 to-card/90 rounded-3xl p-10 border-2 border-border/50 hover:border-accent/50 transition-all duration-500 hover:shadow-[0_0_50px_rgba(238,91,43,0.3)] cursor-pointer overflow-hidden animate-fade-in backdrop-blur-sm active:scale-95" style={{
+              animationDelay: `${index * 200}ms`
+            }} onClick={() => setSelectedDrink(index)}>
                   {/* Gradient overlay on hover */}
                   <div className="absolute inset-0 bg-gradient-to-br from-accent/0 via-brand-fire/0 to-brand-electric/0 group-hover:from-accent/10 group-hover:via-brand-fire/5 group-hover:to-brand-electric/10 transition-all duration-500 rounded-3xl pointer-events-none" />
                   
@@ -96,11 +97,7 @@ const EnergyDrinks = () => {
                     {/* Product Image */}
                     <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden bg-gradient-to-br from-card/50 to-card/30 backdrop-blur-sm border border-border/50">
                       <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-brand-purple/10" />
-                      <img 
-                        src={drink.image} 
-                        alt={drink.name} 
-                        className="relative z-10 object-cover w-full h-full animate-fade-in"
-                      />
+                      <img src={drink.image} alt={drink.name} className="relative z-10 object-cover w-full h-full animate-fade-in" />
                     </div>
 
                     {/* Product Details */}
@@ -122,11 +119,12 @@ const EnergyDrinks = () => {
 
                       <div className="space-y-4 pt-4">
                         <div className="p-4 rounded-xl bg-gradient-to-r from-card/80 to-card/60 border border-border/50 backdrop-blur-sm">
-                          <h3 className="font-bold text-lg mb-2 text-accent">Key Features</h3>
+                          <h3 className="font-bold text-lg mb-2 text-accent">Additional info</h3>
                           <ul className="space-y-2 text-muted-foreground">
                             <li className="flex items-start gap-2">
                               <span className="text-accent mt-1">●</span>
-                              <span>30mg Caffeine per 100ml for sustained energy</span>
+                              <span>Also available in 250/500 ML
+                          </span>
                             </li>
                             <li className="flex items-start gap-2">
                               <span className="text-accent mt-1">●</span>
@@ -152,8 +150,7 @@ const EnergyDrinks = () => {
                   </div>
                 </div>
               </DialogContent>
-            </Dialog>
-          ))}
+            </Dialog>)}
         </div>
       </div>
     </section>;
