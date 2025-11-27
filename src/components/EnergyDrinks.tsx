@@ -128,15 +128,15 @@ const EnergyDrinks = () => {
                             </li>
                             <li className="flex items-start gap-2">
                               <span className="text-accent mt-1">●</span>
-                              <span>0.40% Taurine for enhanced performance</span>
+                              <span>Store in a cool dry & hygienic place</span>
                             </li>
                             <li className="flex items-start gap-2">
                               <span className="text-accent mt-1">●</span>
-                              <span>B-Vitamin Complex for metabolism support</span>
+                              <span>Keep the container away from direct sunlight</span>
                             </li>
                             <li className="flex items-start gap-2">
                               <span className="text-accent mt-1">●</span>
-                              <span>Natural ingredients, premium quality</span>
+                              <span>Premium quality</span>
                             </li>
                           </ul>
                         </div>
