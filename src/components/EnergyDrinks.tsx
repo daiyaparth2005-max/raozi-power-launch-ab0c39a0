@@ -22,7 +22,7 @@ const EnergyDrinks = () => {
     image: raozipremium,
     position: "object-center"
   }, {
-    name: "RAOZI | Water |",
+    name: "RAOZI\nWater",
     variant: "Pure Life",
     size: "500 ML",
     image: raozimineralwater,
@@ -62,7 +62,7 @@ const EnergyDrinks = () => {
 
                   {/* Content with popup effect on hover */}
                   <div className="relative transform transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-3">
-                    <h3 className="text-3xl md:text-4xl font-black mb-2 text-center bg-gradient-to-r from-foreground to-accent bg-clip-text text-transparent group-hover:from-accent group-hover:to-brand-fire transition-all">
+                    <h3 className="text-3xl md:text-4xl font-black mb-2 text-center bg-gradient-to-r from-foreground to-accent bg-clip-text text-transparent group-hover:from-accent group-hover:to-brand-fire transition-all whitespace-pre-line">
                       {drink.name}
                     </h3>
                     <p className="text-lg text-muted-foreground mb-8 text-center font-semibold">
@@ -106,7 +106,7 @@ const EnergyDrinks = () => {
                     {/* Product Details */}
                     <div className="space-y-6">
                       <div>
-                        <h2 className="text-4xl sm:text-5xl font-black mb-3 bg-gradient-to-r from-accent via-brand-fire to-brand-electric bg-clip-text text-transparent">
+                        <h2 className="text-4xl sm:text-5xl font-black mb-3 bg-gradient-to-r from-accent via-brand-fire to-brand-electric bg-clip-text text-transparent whitespace-pre-line">
                           {drink.name}
                         </h2>
                         <p className="text-xl sm:text-2xl text-muted-foreground font-bold">
