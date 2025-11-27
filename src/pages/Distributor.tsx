@@ -8,69 +8,65 @@ import { Textarea } from "@/components/ui/textarea";
 import { TrendingUp, Users, Target, Package, Handshake, BarChart } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import productSplash from "@/assets/product-splash.png";
-
 const Distributor = () => {
-  const { toast } = useToast();
+  const {
+    toast
+  } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     company: "",
     location: "",
-    message: "",
+    message: ""
   });
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
       title: "Application Submitted!",
-      description: "Thank you for your interest. Our team will contact you within 24 hours.",
+      description: "Thank you for your interest. Our team will contact you within 24 hours."
     });
-    setFormData({ name: "", email: "", phone: "", company: "", location: "", message: "" });
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      company: "",
+      location: "",
+      message: ""
+    });
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({
+    setFormData(prev => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     }));
   };
-
-  const benefits = [
-    {
-      icon: TrendingUp,
-      title: "High Growth Potential",
-      description: "Join a rapidly expanding brand in the premium energy drink market.",
-    },
-    {
-      icon: Users,
-      title: "Marketing Support",
-      description: "Comprehensive marketing materials and promotional campaigns.",
-    },
-    {
-      icon: Target,
-      title: "Exclusive Territories",
-      description: "Protected distribution areas to maximize your market potential.",
-    },
-    {
-      icon: Package,
-      title: "Flexible Ordering",
-      description: "Customized order quantities to match your business needs.",
-    },
-    {
-      icon: Handshake,
-      title: "Partnership Approach",
-      description: "We work together as partners to ensure mutual success.",
-    },
-    {
-      icon: BarChart,
-      title: "Competitive Margins",
-      description: "Attractive pricing structure with strong profit opportunities.",
-    },
-  ];
-
-  return (
-    <div className="min-h-screen">
+  const benefits = [{
+    icon: TrendingUp,
+    title: "High Growth Potential",
+    description: "Join a rapidly expanding brand in the premium energy drink market."
+  }, {
+    icon: Users,
+    title: "Marketing Support",
+    description: "Comprehensive marketing materials and promotional campaigns."
+  }, {
+    icon: Target,
+    title: "Exclusive Territories",
+    description: "Protected distribution areas to maximize your market potential."
+  }, {
+    icon: Package,
+    title: "Flexible Ordering",
+    description: "Customized order quantities to match your business needs."
+  }, {
+    icon: Handshake,
+    title: "Partnership Approach",
+    description: "We work together as partners to ensure mutual success."
+  }, {
+    icon: BarChart,
+    title: "Competitive Margins",
+    description: "Attractive pricing structure with strong profit opportunities."
+  }];
+  return <div className="min-h-screen">
       <Header />
       <main className="pt-32 pb-20">
         {/* Hero Section */}
@@ -84,18 +80,12 @@ const Distributor = () => {
 
           {/* Animated particles */}
           <div className="absolute inset-0 opacity-30">
-            {[...Array(20)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute w-2 h-2 bg-white rounded-full animate-float"
-                style={{
-                  left: `${Math.random() * 100}%`,
-                  top: `${Math.random() * 100}%`,
-                  animationDelay: `${Math.random() * 5}s`,
-                  animationDuration: `${3 + Math.random() * 4}s`,
-                }}
-              />
-            ))}
+            {[...Array(20)].map((_, i) => <div key={i} className="absolute w-2 h-2 bg-white rounded-full animate-float" style={{
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 5}s`,
+            animationDuration: `${3 + Math.random() * 4}s`
+          }} />)}
           </div>
 
           <div className="container mx-auto px-4 relative z-10">
@@ -109,14 +99,12 @@ const Distributor = () => {
                   Build your business with RAOZI and join our network of ambitious distributors.
                 </p>
               </div>
-              <div className="relative animate-fade-in" style={{ animationDelay: '200ms' }}>
+              <div className="relative animate-fade-in" style={{
+              animationDelay: '200ms'
+            }}>
                 <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-brand-electric/30 to-brand-cyan/30 blur-3xl rounded-full animate-pulse-glow" />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-gradient-to-br from-brand-purple/40 to-transparent blur-2xl rounded-full animate-rotate-slow" />
-                <img
-                  src={productSplash}
-                  alt="Join RAOZI"
-                  className="relative z-10 w-full max-w-md mx-auto animate-float drop-shadow-2xl hover:scale-105 transition-transform duration-500"
-                />
+                <img src={productSplash} alt="Join RAOZI" className="relative z-10 w-full max-w-md mx-auto animate-float drop-shadow-2xl hover:scale-105 transition-transform duration-500 rounded-full shadow-2xl opacity-95 border-4 border-solid border-muted-foreground object-fill" />
               </div>
             </div>
           </div>
@@ -139,20 +127,16 @@ const Distributor = () => {
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto relative z-10">
-            {benefits.map((benefit, index) => (
-              <div
-                key={index}
-                className="group p-8 bg-gradient-to-br from-card to-card/50 rounded-3xl border-2 border-border/50 hover:border-accent/50 transition-all duration-300 hover:shadow-[0_0_40px_rgba(238,91,43,0.3)] hover:scale-105 backdrop-blur-sm animate-fade-in"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
+            {benefits.map((benefit, index) => <div key={index} className="group p-8 bg-gradient-to-br from-card to-card/50 rounded-3xl border-2 border-border/50 hover:border-accent/50 transition-all duration-300 hover:shadow-[0_0_40px_rgba(238,91,43,0.3)] hover:scale-105 backdrop-blur-sm animate-fade-in" style={{
+            animationDelay: `${index * 100}ms`
+          }}>
                 <div className="relative mb-6">
                   <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-brand-electric/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                   <benefit.icon className="w-14 h-14 text-accent group-hover:text-brand-fire relative z-10 group-hover:scale-110 transition-all duration-300 drop-shadow-[0_0_8px_rgba(238,91,43,0.5)]" strokeWidth={2.5} />
                 </div>
                 <h3 className="text-2xl font-black mb-3 text-foreground group-hover:text-accent transition-colors">{benefit.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{benefit.description}</p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </section>
 
@@ -174,81 +158,32 @@ const Distributor = () => {
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <Label htmlFor="name">Full Name *</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="mt-2"
-                    />
+                    <Input id="name" name="name" value={formData.name} onChange={handleChange} required className="mt-2" />
                   </div>
                   <div>
                     <Label htmlFor="email">Email *</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="mt-2"
-                    />
+                    <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} required className="mt-2" />
                   </div>
                 </div>
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <Label htmlFor="phone">Phone *</Label>
-                    <Input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className="mt-2"
-                    />
+                    <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} required className="mt-2" />
                   </div>
                   <div>
                     <Label htmlFor="company">Company Name</Label>
-                    <Input
-                      id="company"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleChange}
-                      className="mt-2"
-                    />
+                    <Input id="company" name="company" value={formData.company} onChange={handleChange} className="mt-2" />
                   </div>
                 </div>
                 <div>
                   <Label htmlFor="location">Location/Territory of Interest *</Label>
-                  <Input
-                    id="location"
-                    name="location"
-                    value={formData.location}
-                    onChange={handleChange}
-                    required
-                    className="mt-2"
-                    placeholder="City, State, or Region"
-                  />
+                  <Input id="location" name="location" value={formData.location} onChange={handleChange} required className="mt-2" placeholder="City, State, or Region" />
                 </div>
                 <div>
                   <Label htmlFor="message">Tell Us About Your Distribution Experience</Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    rows={6}
-                    className="mt-2"
-                    placeholder="Share your background, experience, and why you want to distribute RAOZI..."
-                  />
+                  <Textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={6} className="mt-2" placeholder="Share your background, experience, and why you want to distribute RAOZI..." />
                 </div>
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="relative overflow-hidden w-full bg-gradient-to-r from-accent via-brand-fire to-accent bg-[length:200%_100%] hover:bg-[position:right_center] text-white font-black text-xl py-7 rounded-2xl shadow-[0_0_40px_rgba(238,91,43,0.4)] hover:shadow-[0_0_60px_rgba(238,91,43,0.7)] hover:scale-105 transition-all duration-300 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700"
-                >
+                <Button type="submit" size="lg" className="relative overflow-hidden w-full bg-gradient-to-r from-accent via-brand-fire to-accent bg-[length:200%_100%] hover:bg-[position:right_center] text-white font-black text-xl py-7 rounded-2xl shadow-[0_0_40px_rgba(238,91,43,0.4)] hover:shadow-[0_0_60px_rgba(238,91,43,0.7)] hover:scale-105 transition-all duration-300 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700">
                   <span className="relative z-10">Submit Application</span>
                 </Button>
               </form>
@@ -258,8 +193,6 @@ const Distributor = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Distributor;
