@@ -21,7 +21,7 @@ const Footer = () => {
                 <Mail className="w-5 h-5" />
                 <span>support@raozi.in</span>
               </a>
-              <a href="tel:+1234567890" className="flex items-center gap-3 text-white/80 hover:text-accent transition-colors">
+              <a href="tel:+919119144242" className="flex items-center gap-3 text-white/80 hover:text-accent transition-colors">
                 <Phone className="w-5 h-5" />
                 <span>+91 9119144242</span>
               </a>
