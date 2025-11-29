@@ -14,7 +14,7 @@ const EnergyDrinks = () => {
     threshold: 0.2
   });
   const drinks = [{
-    name: "RAOZI Classic",
+    name: "RAOZI\nClassic",
     variant: "Original Energy",
     size: "250 ML",
     image: raozicans,
