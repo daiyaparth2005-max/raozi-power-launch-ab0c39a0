@@ -25,7 +25,7 @@ const VideoSection = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-brand-purple/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
             <iframe
               className="absolute top-0 left-0 w-full h-full"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              src="https://www.youtube.com/embed/GQ_S1l9TktY"
               title="RAOZI Energy Drink"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
