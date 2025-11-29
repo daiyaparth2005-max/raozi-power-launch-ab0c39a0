@@ -5,6 +5,10 @@ import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
   base: '/', 
+  build: {
+    // This tells Vite to put the final website files into a 'docs' folder
+    outDir: 'docs', 
+  },
   server: {
     host: '::',
     port: 8080,
@@ -13,6 +17,6 @@ export default defineConfig(({ mode }) => ({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-    },
-  },
+    },
+  },
 }));
