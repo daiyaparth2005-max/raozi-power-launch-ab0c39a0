@@ -23,7 +23,9 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center transition-transform hover:scale-105">
-            <img alt="RAOZI Energy Drink" className="h-10 md:h-12" src={logoMain} />
+            <div className="bg-white/5 dark:bg-white/8 backdrop-blur-sm rounded-lg px-3 py-2 border border-white/10">
+              <img alt="RAOZI Energy Drink" className="h-10 md:h-12" src={logoMain} />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
