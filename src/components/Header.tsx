@@ -39,7 +39,7 @@ const Header = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className="px-6 py-2.5 text-foreground/90 font-semibold text-sm tracking-wide hover:text-accent transition-all duration-300"
+                className="px-6 py-2.5 rounded-full bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/10 text-foreground/90 font-semibold text-sm tracking-wide hover:bg-white/20 dark:hover:bg-white/10 hover:border-white/20 transition-all duration-300"
               >
                 {item.name}
               </Link>
