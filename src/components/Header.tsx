@@ -33,22 +33,23 @@ const Header = () => {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-10">
+          {/* Desktop Navigation - Centered */}
+          <nav className="hidden md:flex items-center gap-3 absolute left-1/2 -translate-x-1/2">
             {navItems.map(item => (
               <Link
                 key={item.path}
                 to={item.path}
-                className="text-foreground/90 font-semibold text-sm tracking-wide hover:text-accent transition-all duration-300 relative group"
+                className="px-6 py-2.5 rounded-full bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/10 text-foreground/90 font-semibold text-sm tracking-wide hover:bg-white/20 dark:hover:bg-white/10 hover:border-white/20 transition-all duration-300"
               >
                 {item.name}
-                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-accent transition-all duration-300 group-hover:w-full" />
               </Link>
             ))}
-            <div className="ml-2">
-              <ThemeToggle />
-            </div>
           </nav>
+
+          {/* Theme Toggle - Right Side */}
+          <div className="hidden md:block">
+            <ThemeToggle />
+          </div>
 
           {/* Mobile Menu Button and Theme Toggle */}
           <div className="md:hidden flex items-center gap-3">
