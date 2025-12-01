@@ -16,7 +16,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/10 backdrop-blur-[20px] border-b border-white/10">
+    <header className="fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -24,7 +24,7 @@ const Header = () => {
             to="/" 
             className="flex items-center transition-all duration-300 hover:scale-105 group"
           >
-            <div className="relative bg-white/8 dark:bg-white/5 backdrop-blur-md rounded-xl px-4 py-2.5 border border-white/15 shadow-[0_0_20px_rgba(238,91,43,0.15)] dark:shadow-[0_0_30px_rgba(238,91,43,0.25)] group-hover:shadow-[0_0_35px_rgba(238,91,43,0.3)] dark:group-hover:shadow-[0_0_45px_rgba(238,91,43,0.4)] transition-all duration-300">
+            <div className="relative">
               <img 
                 alt="RAOZI Energy Drink" 
                 className="h-12 md:h-14 relative z-10" 
@@ -39,7 +39,7 @@ const Header = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className="px-6 py-2.5 rounded-full bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/10 text-foreground/90 font-semibold text-sm tracking-wide hover:bg-white/20 dark:hover:bg-white/10 hover:border-white/20 transition-all duration-300"
+                className="px-6 py-2.5 text-foreground/90 font-semibold text-sm tracking-wide hover:text-accent transition-all duration-300"
               >
                 {item.name}
               </Link>
