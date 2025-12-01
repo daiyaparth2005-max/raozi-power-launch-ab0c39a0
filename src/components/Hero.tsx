@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroFire from "@/assets/hero-fire.jpg";
 import heroDuoDark from "@/assets/hero-duo-dark.jpg";
-import heroDuoLight from "@/assets/hero-duo-light.png";
+import heroDuoLight from "@/assets/hero-duo-light.jpg";
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [{
