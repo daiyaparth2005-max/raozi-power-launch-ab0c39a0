@@ -6,7 +6,9 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <img src={logoEmblem} alt="RAOZI" className="h-16 mb-4" />
+            <div className="relative inline-block bg-white/8 dark:bg-white/5 backdrop-blur-md rounded-xl px-4 py-2.5 border border-white/15 shadow-[0_0_20px_rgba(238,91,43,0.15)] dark:shadow-[0_0_30px_rgba(238,91,43,0.25)] hover:shadow-[0_0_35px_rgba(238,91,43,0.3)] dark:hover:shadow-[0_0_45px_rgba(238,91,43,0.4)] transition-all duration-300 mb-4">
+              <img src={logoEmblem} alt="RAOZI" className="h-16 relative z-10" />
+            </div>
             <p className="text-white/80 leading-relaxed">
               Premium energy drink designed for leaders, movers, and achievers. 
               Fuel your ambitions with RAOZI.
