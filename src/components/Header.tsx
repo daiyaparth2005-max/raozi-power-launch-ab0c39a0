@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logoMain from "@/assets/logo-main.png";
@@ -7,6 +7,7 @@ import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
   
   const navItems = [
     { name: "Home", path: "/" },
@@ -35,15 +36,22 @@ const Header = () => {
 
           {/* Desktop Navigation - Centered */}
           <nav className="hidden md:flex items-center gap-3 absolute left-1/2 -translate-x-1/2">
-            {navItems.map(item => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className="px-6 py-2.5 rounded-full bg-white/10 dark:bg-white/5 backdrop-blur-md border border-white/10 text-foreground/90 font-semibold text-sm tracking-wide hover:bg-white/20 dark:hover:bg-white/10 hover:border-white/20 transition-all duration-300"
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navItems.map(item => {
+              const isActive = location.pathname === item.path;
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`px-6 py-2.5 rounded-full backdrop-blur-md border font-semibold text-sm tracking-wide transition-all duration-300 ${
+                    isActive 
+                      ? 'bg-gradient-to-r from-accent/30 to-brand-fire/30 border-accent/50 text-foreground shadow-[0_0_20px_rgba(238,91,43,0.4)]' 
+                      : 'bg-white/10 dark:bg-white/5 border-white/10 text-foreground/90 hover:bg-white/20 dark:hover:bg-white/10 hover:border-white/20'
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Theme Toggle - Right Side */}
@@ -72,16 +80,23 @@ const Header = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <nav className="md:hidden mt-6 pb-4 flex flex-col gap-4 animate-in slide-in-from-top-2 duration-300">
-            {navItems.map(item => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className="text-foreground/90 font-semibold text-sm tracking-wide hover:text-accent hover:translate-x-2 transition-all duration-300 py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
+            {navItems.map(item => {
+              const isActive = location.pathname === item.path;
+              return (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className={`font-semibold text-sm tracking-wide hover:translate-x-2 transition-all duration-300 py-2 ${
+                    isActive 
+                      ? 'text-accent font-bold' 
+                      : 'text-foreground/90 hover:text-accent'
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
           </nav>
         )}
       </div>
