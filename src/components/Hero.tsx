@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroFire from "@/assets/hero-fire.jpg";
-import heroDuoDark from "@/assets/hero-duo-dark.png";
+import heroDuoDark from "@/assets/hero-duo-dark.jpg";
 import heroDuoLight from "@/assets/hero-duo-light.png";
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
