@@ -22,13 +22,15 @@ const Header = () => {
           {/* Logo */}
           <Link 
             to="/" 
-            className="flex items-center transition-all duration-300 hover:scale-105 hover:brightness-110"
+            className="flex items-center transition-all duration-300 hover:scale-105 group"
           >
-            <img 
-              alt="RAOZI Energy Drink" 
-              className="h-12 md:h-14 drop-shadow-[0_2px_8px_rgba(238,91,43,0.3)]" 
-              src={logoMain} 
-            />
+            <div className="relative bg-white/8 dark:bg-white/5 backdrop-blur-md rounded-xl px-4 py-2.5 border border-white/15 shadow-[0_0_20px_rgba(238,91,43,0.15)] dark:shadow-[0_0_30px_rgba(238,91,43,0.25)] group-hover:shadow-[0_0_35px_rgba(238,91,43,0.3)] dark:group-hover:shadow-[0_0_45px_rgba(238,91,43,0.4)] transition-all duration-300">
+              <img 
+                alt="RAOZI Energy Drink" 
+                className="h-12 md:h-14 relative z-10" 
+                src={logoMain} 
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
