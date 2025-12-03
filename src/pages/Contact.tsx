@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -8,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+
 const Contact = () => {
   const headerRef = useScrollAnimation({
     threshold: 0.2
@@ -27,25 +29,25 @@ const Contact = () => {
     phone: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
     try {
-      const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-form-email`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`
+      await emailjs.send(
+        'service_raozi', // Replace with your EmailJS Service ID
+        'template_contact', // Replace with your Contact Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone || 'Not provided',
+          message: formData.message,
+          to_email: 'raozienergy@gmail.com',
         },
-        body: JSON.stringify({
-          type: 'contact',
-          ...formData
-        })
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to send message');
-      }
+        'YOUR_PUBLIC_KEY' // Replace with your EmailJS Public Key
+      );
 
       toast({
         title: "Message Sent!",
@@ -59,11 +61,14 @@ const Contact = () => {
         message: ""
       });
     } catch (error) {
+      console.error('EmailJS Error:', error);
       toast({
         title: "Error",
         description: "Failed to send message. Please try again.",
         variant: "destructive"
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -122,8 +127,8 @@ const Contact = () => {
                       <Label htmlFor="message" className="text-foreground font-semibold">Message</Label>
                       <Textarea id="message" name="message" value={formData.message} onChange={handleChange} required rows={6} className="mt-2 bg-background/50 border-border/50 focus:border-accent transition-all" />
                     </div>
-                    <Button type="submit" size="lg" className="relative overflow-hidden w-full bg-gradient-to-r from-accent via-brand-fire to-accent bg-[length:200%_100%] hover:bg-[position:right_center] text-white font-black text-lg py-6 rounded-2xl shadow-[0_0_30px_rgba(238,91,43,0.4)] hover:shadow-[0_0_50px_rgba(238,91,43,0.7)] hover:scale-105 transition-all duration-300 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700">
-                      <span className="relative z-10">SEND MESSAGE</span>
+                    <Button type="submit" size="lg" disabled={isSubmitting} className="relative overflow-hidden w-full bg-gradient-to-r from-accent via-brand-fire to-accent bg-[length:200%_100%] hover:bg-[position:right_center] text-white font-black text-lg py-6 rounded-2xl shadow-[0_0_30px_rgba(238,91,43,0.4)] hover:shadow-[0_0_50px_rgba(238,91,43,0.7)] hover:scale-105 transition-all duration-300 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 disabled:opacity-70 disabled:cursor-not-allowed">
+                      <span className="relative z-10">{isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}</span>
                     </Button>
                   </form>
                 </div>
