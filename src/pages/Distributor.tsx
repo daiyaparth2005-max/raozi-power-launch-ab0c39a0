@@ -34,8 +34,8 @@ const Distributor = () => {
     
     try {
       await emailjs.send(
-        'service_raozi', // Replace with your EmailJS Service ID
-        'template_distributor', // Replace with your Distributor Template ID
+        'service_grskiuw',
+        'template_eem0u7i',
         {
           from_name: formData.name,
           from_email: formData.email,
@@ -45,7 +45,7 @@ const Distributor = () => {
           message: formData.message || 'No additional details provided',
           to_email: 'raozienergy@gmail.com',
         },
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS Public Key
+        'QDAl2w06O2OTi71JV'
       );
 
       toast({

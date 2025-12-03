@@ -37,8 +37,8 @@ const Contact = () => {
     
     try {
       await emailjs.send(
-        'service_raozi', // Replace with your EmailJS Service ID
-        'template_contact', // Replace with your Contact Template ID
+        'service_grskiuw',
+        'template_8ffg4k6',
         {
           from_name: formData.name,
           from_email: formData.email,
@@ -46,7 +46,7 @@ const Contact = () => {
           message: formData.message,
           to_email: 'raozienergy@gmail.com',
         },
-        'YOUR_PUBLIC_KEY' // Replace with your EmailJS Public Key
+        'QDAl2w06O2OTi71JV'
       );
 
       toast({
