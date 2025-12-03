@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -25,30 +26,27 @@ const Distributor = () => {
     location: "",
     message: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
     try {
-      const response = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/send-form-email`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY}`
-        },
-        body: JSON.stringify({
-          type: 'distributor',
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          company: formData.company,
+      await emailjs.send(
+        'service_raozi', // Replace with your EmailJS Service ID
+        'template_distributor', // Replace with your Distributor Template ID
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone || 'Not provided',
+          company: formData.company || 'Not provided',
           location: formData.location,
-          experience: formData.message
-        })
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to submit application');
-      }
+          message: formData.message || 'No additional details provided',
+          to_email: 'raozienergy@gmail.com',
+        },
+        'YOUR_PUBLIC_KEY' // Replace with your EmailJS Public Key
+      );
 
       toast({
         title: "Application Submitted!",
@@ -64,11 +62,14 @@ const Distributor = () => {
         message: ""
       });
     } catch (error) {
+      console.error('EmailJS Error:', error);
       toast({
         title: "Error",
         description: "Failed to submit application. Please try again.",
         variant: "destructive"
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -219,8 +220,8 @@ const Distributor = () => {
                   <Label htmlFor="message">Tell Us About Your Distribution Experience</Label>
                   <Textarea id="message" name="message" value={formData.message} onChange={handleChange} rows={6} className="mt-2" placeholder="Share your background, experience, and why you want to distribute RAOZI..." />
                 </div>
-                <Button type="submit" size="lg" className="relative overflow-hidden w-full bg-gradient-to-r from-accent via-brand-fire to-accent bg-[length:200%_100%] hover:bg-[position:right_center] text-white font-black text-xl py-7 rounded-2xl shadow-[0_0_40px_rgba(238,91,43,0.4)] hover:shadow-[0_0_60px_rgba(238,91,43,0.7)] hover:scale-105 transition-all duration-300 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700">
-                  <span className="relative z-10">Submit Application</span>
+                <Button type="submit" size="lg" disabled={isSubmitting} className="relative overflow-hidden w-full bg-gradient-to-r from-accent via-brand-fire to-accent bg-[length:200%_100%] hover:bg-[position:right_center] text-white font-black text-xl py-7 rounded-2xl shadow-[0_0_40px_rgba(238,91,43,0.4)] hover:shadow-[0_0_60px_rgba(238,91,43,0.7)] hover:scale-105 transition-all duration-300 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700 disabled:opacity-70 disabled:cursor-not-allowed">
+                  <span className="relative z-10">{isSubmitting ? 'Submitting...' : 'Submit Application'}</span>
                 </Button>
               </form>
               </div>
