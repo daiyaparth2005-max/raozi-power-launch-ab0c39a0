@@ -52,32 +52,32 @@ const EnergyDrinks = () => {
         <div className="grid md:grid-cols-3 gap-6 md:gap-10 max-w-7xl mx-auto">
           {drinks.map((drink, index) => <Dialog key={index} open={selectedDrink === index} onOpenChange={open => setSelectedDrink(open ? index : null)}>
               <DialogTrigger asChild>
-                <div className="group relative bg-gradient-to-br from-card via-card/95 to-card/90 rounded-2xl md:rounded-3xl p-6 md:p-10 border-2 border-border/50 hover:border-accent/50 transition-all duration-500 hover:shadow-[0_0_50px_rgba(238,91,43,0.3)] cursor-pointer overflow-hidden animate-fade-in backdrop-blur-sm active:scale-95" style={{
+                <div className="group relative bg-white dark:bg-card rounded-2xl md:rounded-3xl p-4 md:p-10 border border-border/30 md:border-2 md:border-border/50 hover:border-accent/50 transition-all duration-500 hover:shadow-[0_0_50px_rgba(238,91,43,0.3)] cursor-pointer overflow-hidden animate-fade-in backdrop-blur-sm active:scale-95 shadow-sm" style={{
               animationDelay: `${index * 200}ms`
             }} onClick={() => setSelectedDrink(index)}>
-                  {/* Gradient overlay on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-accent/0 via-brand-fire/0 to-brand-electric/0 group-hover:from-accent/10 group-hover:via-brand-fire/5 group-hover:to-brand-electric/10 transition-all duration-500 rounded-3xl pointer-events-none" />
+                  {/* Gradient overlay on hover - desktop only */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent/0 via-brand-fire/0 to-brand-electric/0 group-hover:from-accent/10 group-hover:via-brand-fire/5 group-hover:to-brand-electric/10 transition-all duration-500 rounded-3xl pointer-events-none hidden md:block" />
                   
-                  {/* Shimmer effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 pointer-events-none" />
+                  {/* Shimmer effect - desktop only */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 pointer-events-none hidden md:block" />
 
-                  {/* Content with popup effect on hover */}
-                  <div className="relative transform transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-3">
-                    <h3 className="text-2xl md:text-4xl font-black mb-2 text-center bg-gradient-to-r from-foreground to-accent bg-clip-text text-transparent group-hover:from-accent group-hover:to-brand-fire transition-all whitespace-pre-line">
+                  {/* Content */}
+                  <div className="relative transform transition-all duration-500 md:group-hover:scale-105 md:group-hover:-translate-y-3">
+                    <h3 className="text-2xl md:text-4xl font-black mb-1 md:mb-2 text-center bg-gradient-to-r from-foreground to-accent bg-clip-text text-transparent group-hover:from-accent group-hover:to-brand-fire transition-all whitespace-pre-line">
                       {drink.name}
                     </h3>
-                    <p className="text-base md:text-lg text-muted-foreground mb-4 md:mb-8 text-center font-semibold">
+                    <p className="text-sm md:text-lg text-muted-foreground mb-3 md:mb-8 text-center font-semibold">
                       {drink.variant}
                     </p>
 
-                    {/* Product Image with glow */}
-                    <div className="relative h-56 md:h-96 mb-4 md:mb-8 overflow-hidden rounded-xl md:rounded-2xl bg-muted/30">
-                      <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-transparent to-brand-purple/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
-                      <img src={drink.image} alt={drink.name} className="relative z-10 w-full h-full group-hover:scale-110 transition-transform duration-700 object-contain md:object-cover" />
+                    {/* Product Image - mobile: gray bg, contain; desktop: glow effect, cover */}
+                    <div className="relative h-64 md:h-96 mb-4 md:mb-8 overflow-hidden rounded-lg md:rounded-2xl bg-gray-200 dark:bg-muted/50 mx-2 md:mx-0">
+                      <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-transparent to-brand-purple/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl hidden md:block" />
+                      <img src={drink.image} alt={drink.name} className="relative z-10 w-full h-full transition-transform duration-700 md:group-hover:scale-110 object-contain p-2 md:p-0 md:object-cover" />
                     </div>
 
                     <div className="text-center">
-                      <span className="inline-block px-8 py-3 bg-gradient-to-r from-accent/20 to-brand-fire/20 text-accent font-black text-lg rounded-full border-2 border-accent/30 group-hover:border-accent/60 group-hover:shadow-[0_0_20px_rgba(238,91,43,0.4)] transition-all duration-300">
+                      <span className="inline-block px-6 md:px-8 py-2 md:py-3 bg-[#ffd9cc] dark:bg-gradient-to-r dark:from-accent/20 dark:to-brand-fire/20 text-accent font-black text-base md:text-lg rounded-full border-0 md:border-2 md:border-accent/30 group-hover:border-accent/60 group-hover:shadow-[0_0_20px_rgba(238,91,43,0.4)] transition-all duration-300">
                         {drink.size}
                       </span>
                     </div>
