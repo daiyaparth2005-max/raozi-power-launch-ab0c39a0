@@ -7,13 +7,13 @@ const ComingSoon = () => {
   } = useScrollAnimation({
     threshold: 0.2
   });
-  return <section ref={ref} className={`py-20 bg-slate-900 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+  return <section ref={ref} className={`py-12 md:py-20 bg-slate-900 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-5xl md:text-6xl font-black text-orange-600 mb-4">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-3xl md:text-6xl font-black text-orange-600 mb-3 md:mb-4">
             COMING SOON!
           </h2>
-          <p className="text-xl text-slate-400">
+          <p className="text-lg md:text-xl text-slate-400">
             Expanding our energy lineup
           </p>
         </div>
