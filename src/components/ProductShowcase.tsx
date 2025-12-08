@@ -25,20 +25,20 @@ const ProductShowcase = () => {
     title: "B-Vitamin Complex",
     description: "B3, B2, B6, and B12 for energy metabolism"
   }];
-  return <section ref={ref} className={`relative py-24 bg-gradient-to-br from-background via-muted/20 to-background overflow-hidden transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+  return <section ref={ref} className={`relative py-12 md:py-24 bg-gradient-to-br from-background via-muted/20 to-background overflow-hidden transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
       {/* Animated background */}
-      <div className="absolute inset-0 opacity-20 my-[18px]">
+      <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/4 left-0 w-96 h-96 bg-gradient-to-br from-brand-electric/30 to-transparent rounded-full blur-3xl animate-pulse-glow" />
         <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-gradient-to-br from-brand-purple/30 to-transparent rounded-full blur-3xl animate-pulse-glow animation-delay-1000" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid md:grid-cols-2 gap-16 items-center max-w-7xl mx-auto my-[51px] py-0">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center max-w-7xl mx-auto">
           {/* Product Image */}
-          <div className="relative animate-fade-in py-[84px] px-0 mx-0 my-[165px]">
+          <div className="relative animate-fade-in py-8 md:py-20">
             <div className="absolute inset-0 bg-gradient-to-br from-accent/30 via-brand-fire/20 to-brand-electric/30 blur-3xl rounded-full animate-pulse-glow" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-gradient-to-br from-brand-purple/20 to-brand-cyan/20 blur-2xl rounded-full animate-rotate-slow" />
-            <img src={productClean} alt="RAOZI Energy Drink" className="relative z-10 w-full max-w-md mx-auto animate-float drop-shadow-2xl rounded-3xl" />
+            <img src={productClean} alt="RAOZI Energy Drink" className="relative z-10 w-full max-w-xs md:max-w-md mx-auto animate-float drop-shadow-2xl rounded-3xl" />
           </div>
 
           {/* Product Info */}
