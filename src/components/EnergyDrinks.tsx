@@ -73,7 +73,7 @@ const EnergyDrinks = () => {
                     {/* Product Image with glow */}
                     <div className="relative h-64 md:h-96 mb-4 md:mb-8 overflow-hidden rounded-xl md:rounded-2xl">
                       <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-transparent to-brand-purple/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
-                      <img src={drink.image} alt={drink.name} className="relative z-10 object-contain w-full h-full group-hover:scale-110 transition-transform duration-700" />
+                      <img src={drink.image} alt={drink.name} className="relative z-10 w-full h-full group-hover:scale-110 transition-transform duration-700 object-cover" />
                     </div>
 
                     <div className="text-center">
@@ -123,8 +123,7 @@ const EnergyDrinks = () => {
                             {index === 2 ? "Additional info" : "Key Features"}
                           </h3>
                           <ul className="space-y-2 text-muted-foreground">
-                            {index === 2 ? (
-                              <>
+                            {index === 2 ? <>
                                 <li className="flex items-start gap-2">
                                   <span className="text-accent mt-1">●</span>
                                   <span>Also available in 250/500 ML</span>
@@ -141,9 +140,7 @@ const EnergyDrinks = () => {
                                   <span className="text-accent mt-1">●</span>
                                   <span>Premium quality</span>
                                 </li>
-                              </>
-                            ) : (
-                              <>
+                              </> : <>
                                 <li className="flex items-start gap-2">
                                   <span className="text-accent mt-1">●</span>
                                   <span>30mg Caffeine per 100ml</span>
@@ -164,8 +161,7 @@ const EnergyDrinks = () => {
                                   <span className="text-accent mt-1">●</span>
                                   <span>37.20 kcal per 100ml</span>
                                 </li>
-                              </>
-                            )}
+                              </>}
                           </ul>
                         </div>
                       </div>
