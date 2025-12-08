@@ -28,14 +28,14 @@ const Hero = () => {
   }, []);
   const nextSlide = () => setCurrentSlide(prev => (prev + 1) % slides.length);
   const prevSlide = () => setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length);
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-[56.25vw] md:min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Slides */}
       {slides.map((slide, index) => <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"}`}>
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/40 via-black/60 to-brand-fire/40 z-10 py-0 px-0 mx-0 my-0" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,100,50,0.15),transparent_60%)] z-10 py-0 mx-0 my-0" />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/40 via-black/60 to-brand-fire/40 z-10" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,100,50,0.15),transparent_60%)] z-10" />
           <img src={slide.image} alt={slide.title} style={{
         animationPlayState: index === currentSlide ? 'running' : 'paused'
-      }} className="w-full h-full animate-[scale_20s_ease-in-out_infinite] [animation-play-state:paused] object-cover" />
+      }} className="w-full h-full animate-[scale_20s_ease-in-out_infinite] [animation-play-state:paused] object-contain md:object-cover" />
         </div>)}
 
       {/* Content */}
