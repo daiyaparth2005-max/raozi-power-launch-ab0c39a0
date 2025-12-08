@@ -71,9 +71,9 @@ const EnergyDrinks = () => {
                     </p>
 
                     {/* Product Image with glow */}
-                    <div className="relative h-48 md:h-96 mb-4 md:mb-8 overflow-hidden rounded-xl md:rounded-2xl">
+                    <div className="relative h-64 md:h-96 mb-4 md:mb-8 overflow-hidden rounded-xl md:rounded-2xl">
                       <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-transparent to-brand-purple/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
-                      <img src={drink.image} alt={drink.name} className="relative z-10 object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" />
+                      <img src={drink.image} alt={drink.name} className="relative z-10 object-contain w-full h-full group-hover:scale-110 transition-transform duration-700" />
                     </div>
 
                     <div className="text-center">
