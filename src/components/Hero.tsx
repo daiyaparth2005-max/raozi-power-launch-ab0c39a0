@@ -28,7 +28,7 @@ const Hero = () => {
   }, []);
   const nextSlide = () => setCurrentSlide(prev => (prev + 1) % slides.length);
   const prevSlide = () => setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length);
-  return <section className="relative aspect-video md:aspect-auto md:min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative aspect-video md:aspect-auto md:min-h-screen flex items-center justify-center overflow-hidden mt-[60px] md:mt-0">
       {/* Background Slides */}
       {slides.map((slide, index) => <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"}`}>
           <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/40 via-black/60 to-brand-fire/40 z-10" />
@@ -47,11 +47,11 @@ const Hero = () => {
       </div>
 
       {/* Navigation Arrows */}
-      <button onClick={prevSlide} className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-br from-accent/30 to-brand-purple/30 hover:from-accent/50 hover:to-brand-purple/50 backdrop-blur-md p-3 rounded-full transition-all border border-white/20 shadow-[0_0_20px_rgba(238,91,43,0.3)] hover:shadow-[0_0_30px_rgba(238,91,43,0.6)] hover:scale-110">
-        <ChevronLeft className="w-6 h-6 text-white" />
+      <button onClick={prevSlide} className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-transparent hover:bg-white/10 p-2 md:p-3 rounded-lg md:rounded-full transition-all border-2 border-white/60 hover:border-white">
+        <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-white" />
       </button>
-      <button onClick={nextSlide} className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-br from-accent/30 to-brand-purple/30 hover:from-accent/50 hover:to-brand-purple/50 backdrop-blur-md p-3 rounded-full transition-all border border-white/20 shadow-[0_0_20px_rgba(238,91,43,0.3)] hover:shadow-[0_0_30px_rgba(238,91,43,0.6)] hover:scale-110">
-        <ChevronRight className="w-6 h-6 text-white" />
+      <button onClick={nextSlide} className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-transparent hover:bg-white/10 p-2 md:p-3 rounded-lg md:rounded-full transition-all border-2 border-white/60 hover:border-white">
+        <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-white" />
       </button>
     </section>;
 };
