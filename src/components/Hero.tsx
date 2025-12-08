@@ -39,11 +39,11 @@ const Hero = () => {
         </div>)}
 
       {/* Content */}
-      <div className="relative z-20 container mx-auto px-4 text-center">
-        <div className="max-w-4xl mx-auto animate-fade-in">
+      <div className="relative z-20 container mx-auto text-center px-0">
+        <div className="max-w-4xl mx-auto animate-fade-in mb-0 mt-[240px] pt-[240px] pb-0 py-[235px] my-[232px] px-0">
           
           
-          <div className="flex-wrap mx-[195px] my-0 flex-row py-0 flex items-center justify-center gap-[11px]">
+          <div className="flex-wrap py-0 gap-[11px] mx-0 items-center justify-start flex flex-row my-[65px] mb-[52px]">
             <Link to="/about">
               <Button size="lg" className="relative overflow-hidden bg-gradient-to-r from-accent via-brand-fire to-accent bg-[length:200%_100%] hover:bg-[position:right_center] text-white font-bold text-lg px-8 py-6 rounded-xl shadow-[0_0_30px_rgba(238,91,43,0.5)] hover:shadow-[0_0_50px_rgba(238,91,43,0.8)] hover:scale-105 transition-all duration-300 animate-shimmer before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700">
                 Discover More
@@ -58,9 +58,7 @@ const Hero = () => {
         </div>
 
         {/* Slide Indicators */}
-        <div className="flex gap-2 justify-center mt-12">
-          {slides.map((_, index) => <button key={index} onClick={() => setCurrentSlide(index)} className={`h-2 rounded-full transition-all ${index === currentSlide ? "w-8 bg-gradient-to-r from-accent to-brand-electric shadow-[0_0_10px_rgba(238,91,43,0.8)]" : "w-2 bg-white/50 hover:bg-white/80"}`} />)}
-        </div>
+        
       </div>
 
       {/* Navigation Arrows */}
