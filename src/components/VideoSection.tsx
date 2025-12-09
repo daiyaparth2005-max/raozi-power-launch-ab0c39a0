@@ -4,7 +4,7 @@ const VideoSection = () => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
   
   return (
-    <section ref={ref} className={`relative py-12 md:py-24 bg-gradient-to-br from-muted/20 via-background to-muted/20 overflow-hidden transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+    <section ref={ref} className={`relative py-24 bg-gradient-to-br from-muted/20 via-background to-muted/20 overflow-hidden transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
       {/* Animated background */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-br from-brand-purple/30 to-brand-cyan/30 rounded-full blur-3xl animate-pulse-glow" />
@@ -12,11 +12,11 @@ const VideoSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-8 md:mb-12 animate-fade-in">
-            <h2 className="text-3xl md:text-6xl font-black mb-3 md:mb-4 bg-gradient-to-r from-foreground via-accent to-brand-electric bg-clip-text text-transparent">
+          <div className="text-center mb-12 animate-fade-in">
+            <h2 className="text-5xl md:text-6xl font-black mb-4 bg-gradient-to-r from-foreground via-accent to-brand-electric bg-clip-text text-transparent">
               Experience RAOZI
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground">
+            <p className="text-xl text-muted-foreground">
               Witness the power of premium energy
             </p>
           </div>

@@ -28,7 +28,7 @@ const BrandHighlights = () => {
   ];
 
   return (
-    <section ref={ref} className={`relative py-12 md:py-20 bg-gradient-to-br from-background via-muted/30 to-background overflow-hidden transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+    <section ref={ref} className={`relative py-20 bg-gradient-to-br from-background via-muted/30 to-background overflow-hidden transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-brand-fire/20 to-transparent rounded-full blur-3xl animate-pulse-glow" />
@@ -36,10 +36,10 @@ const BrandHighlights = () => {
       </div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-3xl md:text-5xl font-black text-center mb-8 md:mb-12 bg-gradient-to-r from-foreground via-accent to-foreground bg-clip-text text-transparent">
+        <h2 className="text-4xl md:text-5xl font-black text-center mb-12 bg-gradient-to-r from-foreground via-accent to-foreground bg-clip-text text-transparent">
           Powered By Excellence
         </h2>
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-20">
+        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20">
           {highlights.map((highlight, index) => (
             <div
               key={index}

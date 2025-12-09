@@ -28,30 +28,47 @@ const Hero = () => {
   }, []);
   const nextSlide = () => setCurrentSlide(prev => (prev + 1) % slides.length);
   const prevSlide = () => setCurrentSlide(prev => (prev - 1 + slides.length) % slides.length);
-  return <section className="relative aspect-video md:aspect-auto md:min-h-screen flex items-center justify-center overflow-hidden mt-[60px] md:mt-0">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Slides */}
       {slides.map((slide, index) => <div key={index} className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"}`}>
-          <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/40 via-black/60 to-brand-fire/40 z-10" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,100,50,0.15),transparent_60%)] z-10" />
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-purple/40 via-black/60 to-brand-fire/40 z-10 py-0 px-0 mx-0 my-0" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,100,50,0.15),transparent_60%)] z-10 py-0 mx-0 my-0" />
           <img src={slide.image} alt={slide.title} style={{
         animationPlayState: index === currentSlide ? 'running' : 'paused'
       }} className="w-full h-full animate-[scale_20s_ease-in-out_infinite] [animation-play-state:paused] object-cover" />
         </div>)}
 
       {/* Content */}
-      <div className="relative z-20 container mx-auto text-center px-0">
-        
+      <div className="relative z-20 container mx-auto px-4 text-center">
+        <div className="max-w-4xl mx-auto animate-fade-in">
+          
+          
+          <div className="flex-wrap mx-[195px] my-0 flex-row py-0 flex items-center justify-center gap-[11px]">
+            <Link to="/about">
+              <Button size="lg" className="relative overflow-hidden bg-gradient-to-r from-accent via-brand-fire to-accent bg-[length:200%_100%] hover:bg-[position:right_center] text-white font-bold text-lg px-8 py-6 rounded-xl shadow-[0_0_30px_rgba(238,91,43,0.5)] hover:shadow-[0_0_50px_rgba(238,91,43,0.8)] hover:scale-105 transition-all duration-300 animate-shimmer before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700">
+                Discover More
+              </Button>
+            </Link>
+            <Link to="/distributor">
+              <Button size="lg" className="relative overflow-hidden bg-gradient-to-r from-accent via-brand-fire to-accent bg-[length:200%_100%] hover:bg-[position:right_center] text-white font-bold text-lg px-8 py-6 rounded-xl shadow-[0_0_30px_rgba(238,91,43,0.5)] hover:shadow-[0_0_50px_rgba(238,91,43,0.8)] hover:scale-105 transition-all duration-300 animate-shimmer before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700">
+                Become a Distributor
+              </Button>
+            </Link>
+          </div>
+        </div>
 
         {/* Slide Indicators */}
-        
+        <div className="flex gap-2 justify-center mt-12">
+          {slides.map((_, index) => <button key={index} onClick={() => setCurrentSlide(index)} className={`h-2 rounded-full transition-all ${index === currentSlide ? "w-8 bg-gradient-to-r from-accent to-brand-electric shadow-[0_0_10px_rgba(238,91,43,0.8)]" : "w-2 bg-white/50 hover:bg-white/80"}`} />)}
+        </div>
       </div>
 
       {/* Navigation Arrows */}
-      <button onClick={prevSlide} className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-transparent hover:bg-white/10 p-2 md:p-3 rounded-lg md:rounded-full transition-all border-2 border-white/60 hover:border-white">
-        <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-white" />
+      <button onClick={prevSlide} className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-br from-accent/30 to-brand-purple/30 hover:from-accent/50 hover:to-brand-purple/50 backdrop-blur-md p-3 rounded-full transition-all border border-white/20 shadow-[0_0_20px_rgba(238,91,43,0.3)] hover:shadow-[0_0_30px_rgba(238,91,43,0.6)] hover:scale-110">
+        <ChevronLeft className="w-6 h-6 text-white" />
       </button>
-      <button onClick={nextSlide} className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-transparent hover:bg-white/10 p-2 md:p-3 rounded-lg md:rounded-full transition-all border-2 border-white/60 hover:border-white">
-        <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-white" />
+      <button onClick={nextSlide} className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-br from-accent/30 to-brand-purple/30 hover:from-accent/50 hover:to-brand-purple/50 backdrop-blur-md p-3 rounded-full transition-all border border-white/20 shadow-[0_0_20px_rgba(238,91,43,0.3)] hover:shadow-[0_0_30px_rgba(238,91,43,0.6)] hover:scale-110">
+        <ChevronRight className="w-6 h-6 text-white" />
       </button>
     </section>;
 };

@@ -19,7 +19,7 @@ const DistributorCTA = () => {
     title: "Premium Margins",
     description: "Competitive pricing and profit opportunities"
   }];
-  return <section ref={ref} className={`relative py-12 md:py-24 bg-gradient-to-br from-primary via-accent to-brand-fire overflow-hidden transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
+  return <section ref={ref} className={`relative py-24 bg-gradient-to-br from-primary via-accent to-brand-fire overflow-hidden transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
       {/* Animated Background Elements */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-10 left-10 w-96 h-96 bg-gradient-to-br from-white to-brand-electric rounded-full blur-3xl animate-pulse-glow" />
@@ -38,13 +38,13 @@ const DistributorCTA = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
           {/* Content */}
           <div className="text-white animate-fade-in">
-            <h2 className="text-3xl md:text-6xl font-black mb-4 md:mb-6 drop-shadow-lg">
+            <h2 className="text-5xl md:text-6xl font-black mb-6 drop-shadow-lg">
               Start Your Journey <span className="bg-clip-text text-transparent bg-gradient-to-r from-brand-electric via-white to-brand-electric animate-shimmer bg-[length:200%_100%]">With Us</span>
             </h2>
-            <p className="text-lg md:text-2xl mb-6 md:mb-10 opacity-95 leading-relaxed drop-shadow-md">
+            <p className="text-xl md:text-2xl mb-10 opacity-95 leading-relaxed drop-shadow-md">
               Join the RAOZI family and become part of an energetic, ambitious network of 
               distributors. Build your business with a premium brand that stands out.
             </p>
@@ -79,10 +79,10 @@ const DistributorCTA = () => {
           {/* Product Image */}
           <div style={{
           animationDelay: '300ms'
-        }} className="relative animate-fade-in py-6 md:py-12">
+        }} className="relative animate-fade-in mx-0 my-0 px-0 py-12">
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-brand-electric/30 to-brand-cyan/30 blur-3xl rounded-full animate-pulse-glow" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-gradient-to-br from-brand-purple/40 to-transparent blur-2xl rounded-full animate-rotate-slow" />
-            <img src={productSpotlight} alt="Join RAOZI" className="relative z-10 w-full max-w-xs md:max-w-3xl mx-auto animate-float drop-shadow-2xl hover:scale-105 transition-transform duration-500 rounded-2xl border-none object-fill" />
+            <img src={productSpotlight} alt="Join RAOZI" className="relative z-10 w-full max-w-3xl mx-auto animate-float drop-shadow-2xl hover:scale-105 transition-transform duration-500 rounded-2xl border-none object-fill" />
           </div>
         </div>
       </div>
