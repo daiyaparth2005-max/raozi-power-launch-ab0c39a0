@@ -49,11 +49,11 @@ const Hero = () => {
       </div>
 
       {/* Navigation Arrows */}
-      <button onClick={prevSlide} className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-br from-accent/30 to-brand-purple/30 hover:from-accent/50 hover:to-brand-purple/50 backdrop-blur-md p-3 rounded-full transition-all border border-white/20 shadow-[0_0_20px_rgba(238,91,43,0.3)] hover:shadow-[0_0_30px_rgba(238,91,43,0.6)] hover:scale-110">
-        <ChevronLeft className="w-6 h-6 text-white" />
+      <button onClick={prevSlide} className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 p-1 md:p-3 rounded-full transition-all md:bg-gradient-to-br md:from-accent/30 md:to-brand-purple/30 md:hover:from-accent/50 md:hover:to-brand-purple/50 md:backdrop-blur-md md:border md:border-white/20 md:shadow-[0_0_20px_rgba(238,91,43,0.3)] md:hover:shadow-[0_0_30px_rgba(238,91,43,0.6)] md:hover:scale-110">
+        <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-white" />
       </button>
-      <button onClick={nextSlide} className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-gradient-to-br from-accent/30 to-brand-purple/30 hover:from-accent/50 hover:to-brand-purple/50 backdrop-blur-md p-3 rounded-full transition-all border border-white/20 shadow-[0_0_20px_rgba(238,91,43,0.3)] hover:shadow-[0_0_30px_rgba(238,91,43,0.6)] hover:scale-110">
-        <ChevronRight className="w-6 h-6 text-white" />
+      <button onClick={nextSlide} className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 p-1 md:p-3 rounded-full transition-all md:bg-gradient-to-br md:from-accent/30 md:to-brand-purple/30 md:hover:from-accent/50 md:hover:to-brand-purple/50 md:backdrop-blur-md md:border md:border-white/20 md:shadow-[0_0_20px_rgba(238,91,43,0.3)] md:hover:shadow-[0_0_30px_rgba(238,91,43,0.6)] md:hover:scale-110">
+        <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-white" />
       </button>
     </section>;
 };
