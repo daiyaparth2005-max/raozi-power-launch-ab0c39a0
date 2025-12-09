@@ -35,10 +35,15 @@ const ProductShowcase = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid md:grid-cols-2 gap-16 items-center max-w-7xl mx-auto my-[51px] py-0">
           {/* Product Image */}
-          <div className="relative animate-fade-in py-[84px] px-0 mx-0 my-[165px]">
+          <div className="relative animate-fade-in py-4 md:py-[84px] px-0 mx-0 my-0 md:my-[165px]">
             <div className="absolute inset-0 bg-gradient-to-br from-accent/30 via-brand-fire/20 to-brand-electric/30 blur-3xl rounded-full animate-pulse-glow" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-gradient-to-br from-brand-purple/20 to-brand-cyan/20 blur-2xl rounded-full animate-rotate-slow" />
-            <img src={productClean} alt="RAOZI Energy Drink" className="relative z-10 w-full max-w-md mx-auto animate-float drop-shadow-2xl rounded-3xl" />
+            {/* Mobile: 16:9 aspect ratio container */}
+            <div className="md:hidden aspect-[16/9] w-full flex items-center justify-center">
+              <img src={productClean} alt="RAOZI Energy Drink" className="relative z-10 h-full w-auto object-contain drop-shadow-2xl" />
+            </div>
+            {/* Desktop: Original styling */}
+            <img src={productClean} alt="RAOZI Energy Drink" className="hidden md:block relative z-10 w-full max-w-md mx-auto animate-float drop-shadow-2xl rounded-3xl" />
           </div>
 
           {/* Product Info */}
