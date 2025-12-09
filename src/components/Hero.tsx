@@ -2,22 +2,22 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroFire from "@/assets/hero-fire.jpg";
-import heroDuoDark from "@/assets/hero-duo-dark.jpg";
-import heroDuoLight from "@/assets/hero-duo-light.jpg";
+import hero1 from "@/assets/hero-1.jpg";
+import hero2 from "@/assets/hero-2.png";
+import hero3 from "@/assets/hero-3.jpg";
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [{
-    image: heroFire,
+    image: hero1,
     title: "Energy For Leaders",
     subtitle: "Unleash Your Potential"
   }, {
-    image: heroDuoDark,
+    image: hero2,
     title: "Fuel Your Greatness",
-    subtitle: "Explore Energy"
+    subtitle: "Designed For Achievers"
   }, {
-    image: heroDuoLight,
-    title: "Designed For Achievers",
+    image: hero3,
+    title: "Feel The Electrifying Rush",
     subtitle: "Premium Energy Experience"
   }];
   useEffect(() => {
